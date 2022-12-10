@@ -1,0 +1,7 @@
+{
+  "name": "SPC pet parent",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
