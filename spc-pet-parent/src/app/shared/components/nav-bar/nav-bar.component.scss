@@ -1,0 +1,15 @@
+.pp-footer {
+    max-width: var(--spc-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .nav-button {
+        display: flex;
+        width: 50%;
+    }
+    .nav-button:last-child {
+        border-left: 1px solid var(--ion-color-light);
+    }
+}

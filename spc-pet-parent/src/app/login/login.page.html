@@ -1,0 +1,38 @@
+
+
+<ion-content [fullscreen]="true" >
+
+  <div class="loader-container" *ngIf="loading">
+     <pp-loader></pp-loader>
+  </div>
+  <div class="login-container" *ngIf="!loading">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(buttonType)">
+      <ion-list>
+          <ion-item lines="none">
+            <ion-label color="primary" position="fixed">Flat number</ion-label>
+            <ion-input (keypress)="keypress($event)" color="primary" placeholder="Enter text" formControlName="flatNumber"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-label color="primary" position="fixed">Password</ion-label>
+            <ion-input color="primary" placeholder="Enter text" formControlName="password"></ion-input>
+          </ion-item>
+
+          <div style="width: 100%; min-height: 50px; ">
+            <ion-text color="danger" *ngIf="errorMsg" style="font-size: 12px">{{errorMsg}}</ion-text>
+            <ion-text color="dark" *ngIf="successMsg" style="font-size: 12px">{{successMsg}}</ion-text>
+          </div>
+
+          <div class="button-group">
+            <ion-button 
+            [disabled]="loginForm.invalid"
+            expand="full" style="width: 70%" (click)="onSubmit('login')">Login</ion-button>
+            <ion-button 
+            [disabled]="loginForm.invalid"
+            color="warning" style="width: 30%" (click)="onSubmit('signup')" expand="full">Signup</ion-button>
+          </div>
+      </ion-list>
+    </form>
+  </div>
+  
+</ion-content>
